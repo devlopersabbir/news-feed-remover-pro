@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
-import "./Popup.css";
+import { useEffect } from "react";
 
-export default function() {
+export default function () {
   useEffect(() => {
     console.log("Hello from the popup!");
   }, []);
@@ -14,5 +13,5 @@ export default function() {
         Template: <code>react-ts</code>
       </p>
     </div>
-  )
+  );
 }
