@@ -2,32 +2,44 @@
   "name": "News Feed Remover Pro",
   "description": "Simple News feed remover extension",
   "version": "0.0.1",
-  "version_name": "beta",
+  "{{chrome}}.version_name": "beta",
   "{{chrome}}.manifest_version": 3,
   "{{firefox}}.manifest_version": 2,
   "icons": {
-    "16": "icon/16.png",
-    "32": "icon/32.png",
-    "48": "icon/48.png",
-    "96": "icon/96.png",
-    "128": "icon/128.png"
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "96": "icon.png",
+    "128": "icon.png"
   },
-  "{{chrome}}.action": {
-    "default_popup": "src/popup.html",
-    "default_title": "New Remover",
+  "action": {
     "default_icon": {
-      "16": "icon/48.png",
-      "24": "icon/48.png",
-      "32": "icon/48.png"
-    }
+      "16": "icon.png",
+      "24": "icon.png",
+      "32": "icon.png"
+    },
+    "default_popup": "src/popup.html",
+    "default_title": "Feed Remover"
   },
   "{{firefox}}.browser_action": {
-    "default_popup": "src/popup.html",
-    "default_title": "New Remover",
-    "default_icon": "icon/48.png"
+    "default_icon": "icon.png",
+    "default_title": "Feed Remover",
+    "default_popup": "src/popup.html"
   },
   "background": {
     "{{chrome}}.service_worker": "src/background.ts",
     "{{firefox}}.scripts": ["src/background.ts"]
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.ts"],
+      "run_at": "document_end"
+    }
+  ],
+  "{{chrome}}.options_page": "src/options.html",
+  "{{firefox}}.options_ui": {
+    "page": "src/options.html"
+  },
+  "permissions": ["tabs", "storage"]
 }

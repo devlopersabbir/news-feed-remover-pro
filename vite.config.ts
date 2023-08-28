@@ -3,6 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import webExtension, { readJsonFile } from "vite-plugin-web-extension";
 import path from "node:path";
 
+const TARGET = process.env.TARGET_CHROME || "chrome";
+
 function generateManifest() {
   const manifest = readJsonFile("src/manifest.json");
   const pkg = readJsonFile("package.json");
@@ -20,6 +22,7 @@ export default defineConfig({
     react(),
     webExtension({
       manifest: generateManifest,
+      browser: TARGET,
     }),
   ],
   resolve: {
