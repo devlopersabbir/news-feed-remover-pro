@@ -1,4 +1,8 @@
 {
+  "name": "News Feed Remover Pro",
+  "description": "Simple News feed remover extension",
+  "version": "0.0.1",
+  "version_name": "beta",
   "{{chrome}}.manifest_version": 3,
   "{{firefox}}.manifest_version": 2,
   "icons": {
@@ -9,10 +13,18 @@
     "128": "icon/128.png"
   },
   "{{chrome}}.action": {
-    "default_popup": "src/popup.html"
+    "default_popup": "src/popup.html",
+    "default_title": "New Remover",
+    "default_icon": {
+      "16": "icon/48.png",
+      "24": "icon/48.png",
+      "32": "icon/48.png"
+    }
   },
   "{{firefox}}.browser_action": {
-    "default_popup": "src/popup.html"
+    "default_popup": "src/popup.html",
+    "default_title": "New Remover",
+    "default_icon": "icon/48.png"
   },
   "background": {
     "{{chrome}}.service_worker": "src/background.ts",
