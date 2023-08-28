@@ -1,9 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "incremental": true,
-    "module": "CommonJS",
-    "outDir": "dist/test"
-  },
-  "exclude": []
-}
