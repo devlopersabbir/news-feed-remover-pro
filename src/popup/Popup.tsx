@@ -1,17 +1,11 @@
-import { useEffect } from "react";
+import React from "react";
 
-export default function () {
-  useEffect(() => {
-    console.log("Hello from the popup!");
-  }, []);
-
+const Popup: React.FC = () => {
   return (
-    <div>
-      <img src="/icon-with-shadow.svg" />
-      <h1>vite-plugin-web-extension</h1>
-      <p>
-        Template: <code>react-ts</code>
-      </p>
+    <div className="w-[420px] h-auto p-4">
+      <h1 className="text-3xl font-semibold">Hello world</h1>
     </div>
   );
-}
+};
+
+export default Popup;
