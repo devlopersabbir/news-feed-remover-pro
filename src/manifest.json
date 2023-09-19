@@ -37,7 +37,7 @@
     {
       "matches": ["<all_urls>"],
       "js": ["src/content.ts"],
-      "run_at": "document_end"
+      "css": ["src/content/script.css"]
     }
   ],
   "{{chrome}}.options_page": "src/options.html",
