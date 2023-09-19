@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import webExtension, { readJsonFile } from "vite-plugin-web-extension";
 import path from "node:path";
 
-const TARGET = process.env.TARGET || "firefox";
+const TARGET = process.env.TARGET || "chrome";
 
 function generateManifest() {
   const manifest = readJsonFile("src/manifest.json");
